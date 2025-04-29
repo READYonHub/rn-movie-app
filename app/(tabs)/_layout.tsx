@@ -1,5 +1,25 @@
-import React from 'react'
 import { Tabs } from 'expo-router'
+import { Image, ImageBackground, Text } from 'react-native'
+import { images } from '@/constants/images';
+import { icons } from '@/constants/icons'
+
+const TabIcon = () => {
+    return (
+        <ImageBackground source={images.highlight}
+            className='flex flex-row w-full flex-1 min-w-[122px] min-h-14 mt-4 justify-center items-center rounded-full overflow-hidden'
+        >
+
+            <Image source={icons.home} tintColor="#151312" className='size-5' />
+
+            <Text
+                className='text-secondly text-base font-semibold ml-2'
+            >
+                Home
+            </Text>
+        </ImageBackground>
+    )
+}
+
 
 const Layout = () => {
     return (
@@ -9,6 +29,13 @@ const Layout = () => {
                 options={{
                     title: 'Home',
                     headerShown: false,
+                    tabBarIcon: ({ focused }) => (
+                        <TabIcon
+                            focused={focused}
+                            icon={icons.home}
+                            title="Home"
+                        />
+                    )
                 }}
             />
 
@@ -17,6 +44,12 @@ const Layout = () => {
                 options={{
                     title: 'Search',
                     headerShown: false,
+                    tabBarIcon: ({ focused }) => (
+                        <TabIcon
+                            focused={focused}
+                            icon={icons.search}
+                            title="Search"
+                        />)
                 }}
             />
 
@@ -25,6 +58,12 @@ const Layout = () => {
                 options={{
                     title: 'Saved',
                     headerShown: false,
+                    tabBarIcon: ({ focused }) => (
+                        <TabIcon
+                            focused={focused}
+                            icon={icons.save}
+                            title="Saved"
+                        />)
                 }}
             />
 
@@ -33,6 +72,12 @@ const Layout = () => {
                 options={{
                     title: 'Profile',
                     headerShown: false,
+                    tabBarIcon: ({ focused }) => (
+                        <TabIcon
+                            focused={focused}
+                            icon={icons.person}
+                            title="Profile"
+                        />)
                 }}
             />
         </Tabs>
