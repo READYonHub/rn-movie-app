@@ -48,3 +48,15 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+## Project Setup
+
+npm install nativewind tailwindcss react-native-reanimated react-native-safe-area-context
+
+( https://www.nativewind.dev/getting-started/installation )
+
+npx tailwindcss init
+npx expo custimize metro.config.js
+npx expo customize metro.config.js
+npx expo start --clear
+
